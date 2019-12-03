@@ -75,3 +75,10 @@ Name one of the annotation which is not part of JPA (but part of hibernate)
 => @CollectionId(colum)
 => @GenericGenerator
 
+
+
+
+## Hibernate Collection
+1. Bag Semantic  		 => List/ArrayList   (can put in order and reterive in nay order)
+2. Bag Semantic with Id  => List/ArrayList
+3. List Semantic         => List/ArrayList   (maintains the order)  
