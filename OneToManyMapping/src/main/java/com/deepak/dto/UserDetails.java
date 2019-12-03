@@ -1,16 +1,12 @@
 package com.deepak.dto;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity(name = "USER_DETAILS")
 public class UserDetails {
@@ -25,15 +21,15 @@ public class UserDetails {
 	
 	private String userName;
 	
-	@JoinTable(name = "USER_VEHICLE",joinColumns= @JoinColumn(name="USER_ID"), inverseJoinColumns=@JoinColumn(name="VECHILE_ID"))
-	@OneToMany
-	private Collection<Vehicle> vehicle = new ArrayList<>();
-
-	public Collection<Vehicle> getVehicle() {
+	@JoinColumn(name="VEHICLE_ID")                  // Specifies a column for joining an entity association or elementcollection
+	@OneToOne
+	private Vehicle vehicle;
+	
+	public Vehicle getVehicle() {
 		return vehicle;
 	}
 
-	public void setVehicle(Collection<Vehicle> vehicle) {
+	public void setVehicle(Vehicle vehicle) {
 		this.vehicle = vehicle;
 	}
 

@@ -15,21 +15,16 @@ public class HibernateTest {
 		userDetails.setUserId(3);  // won't work if using @GeneratedValue over the attribute
 		userDetails.setUserName("Deepak");
 		
-		Vehicle vehicle1 = new Vehicle();
-		vehicle1.setVehicleName("Jaguar");
-		userDetails.getVehicle().add(vehicle1);
-		
-		Vehicle vehicle2 = new Vehicle();
-		vehicle2.setVehicleName("BMW");
-		userDetails.getVehicle().add(vehicle2);
+		Vehicle vehicle = new Vehicle();
+		vehicle.setVehicleName("Jaguar");
+		userDetails.setVehicle(vehicle);
 		
 
 		SessionFactory sessionFactory = new Configuration().configure("Hibernate.cfg.xml").buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
 		session.save(userDetails);
-		session.save(vehicle1);
-		session.save(vehicle2);
+		session.save(vehicle);
 		transaction.commit(); // session.getTransaction().commit();
 		session.close();  // generally mentioned in finally block
 		
