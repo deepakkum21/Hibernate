@@ -74,6 +74,7 @@ Why importing most of the Annotations like @Id, @Entity, @Table, @Embeddable etc
 Name one of the annotation which is not part of JPA (but part of hibernate)
 => @CollectionId(colum)
 => @GenericGenerator
+=> @NotFound(action=NotFoundAction.IGNORE)
 
 
 
@@ -82,3 +83,5 @@ Name one of the annotation which is not part of JPA (but part of hibernate)
 1. Bag Semantic  		 => List/ArrayList   (can put in order and reterive in nay order)
 2. Bag Semantic with Id  => List/ArrayList
 3. List Semantic         => List/ArrayList   (maintains the order)  
+4. Set Semantic          => Set
+5. Map Semantic          => Map
