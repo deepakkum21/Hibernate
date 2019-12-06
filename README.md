@@ -85,3 +85,17 @@ Name one of the annotation which is not part of JPA (but part of hibernate)
 3. List Semantic         => List/ArrayList   (maintains the order)  
 4. Set Semantic          => Set
 5. Map Semantic          => Map
+
+
+CASCADING :-
+1. When we are saving user we use save(user) and if have to save multiple vehicles for that particular user, we have to save them one by one which makes code look untidy or when we ahve to delete the user and delete the relevant vehicle associated with that particular user one by one.
+
+
+
+## Hibernate Inheritance
+1. SingleTable Strategy (by default)
+
+### SingleTable Strategy (by default)
+=> In this only one table is created irrespective of what class it is being referred.
+=> that table will have a DTYPE(discriminator type) column which will have the name of the Enity.
+=> This table will have all the columns (adding the columns which different entity have) but will skip the value if the particular enyity doesnot have the value for that.
