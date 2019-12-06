@@ -95,6 +95,7 @@ CASCADING :-
 ## Hibernate Inheritance
 1. SingleTable Strategy (by default)
 2. TablePerClass Strategy
+3. Joined
 
 ### SingleTable Strategy (by default)
 => In this only one table is created irrespective of what class it is being referred.
@@ -105,3 +106,6 @@ CASCADING :-
 => Doesnot need DiscriminatorColumn.
 => This is normalized form where we don't have column where null value is present as it is present in case of SingleTable since that field is not present in that class. No blank column will be inherited.
 => All the filds of parent class with the annotationon it is carried forward to the child.
+
+### Joined Strategy
+=> A strategy in which fields that are specific to a subclass are mapped to a separate table than the fields that are common to the parent class, and a join is performed to instantiate the subclass.
