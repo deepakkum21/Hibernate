@@ -94,8 +94,14 @@ CASCADING :-
 
 ## Hibernate Inheritance
 1. SingleTable Strategy (by default)
+2. TablePerClass Strategy
 
 ### SingleTable Strategy (by default)
 => In this only one table is created irrespective of what class it is being referred.
 => that table will have a DTYPE(discriminator type) column which will have the name of the Enity.
 => This table will have all the columns (adding the columns which different entity have) but will skip the value if the particular enyity doesnot have the value for that.
+
+### TablePerClass Strategy
+=> Doesnot need DiscriminatorColumn.
+=> This is normalized form where we don't have column where null value is present as it is present in case of SingleTable since that field is not present in that class. No blank column will be inherited.
+=> All the filds of parent class with the annotationon it is carried forward to the child.
